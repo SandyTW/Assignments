@@ -27,10 +27,26 @@
     margin: 0%;
     padding: 0px;
 }
+
 @media screen and (max-width: 1200px){
     .content{width: 100%;}
-    }
-.pic-group{
-    display: block;
-    margin: auto;
+    
+.main{
+    width:1200px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.pic-group-1{
+    display:inline-block;
+    flex-direction: row;
+}
+.pic-name{
+    background-color:rgb(222, 238, 252);
+    width:300px;
+    font-size: 20px;
+    justify-content: space-between;
+    margin:0px;
+    height:50px;
+    text-align: center;
+    line-height: 50px;
 }
