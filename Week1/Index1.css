@@ -1,5 +1,4 @@
-/* Week1-A.css */
-
+/* Index1.css */
 
 .title{
     text-align: left;
@@ -24,22 +23,31 @@
     text-align: center;
     font-size: 40px;
     line-height: 300px;
-    margin: 0%;
-    padding: 0px;
+    margin: 10px 0px 10px 0px;
+
 }
 
-@media screen and (max-width: 1200px){
-    .content{width: 100%;}
-    
-.main{
-    width:1200px;
-    display: flex;
+main{
+    display: flex; 
+    justify-content: center;
     flex-wrap: nowrap;
+    margin: 20px;
 }
-.pic-group-1{
-    display:inline-block;
+
+.pic-group-a{
+
     flex-direction: row;
+    justify-content: space-between;
+    margin:3px;
+    
 }
+.image{
+    display:inline-block; 
+    width:300px;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
 .pic-name{
     background-color:rgb(222, 238, 252);
     width:300px;
