@@ -8,6 +8,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.icon{
+    width:50%;
+    height:auto;
+    justify-items: flex-end;
+    display: none;  
+}
 .ul-list{
     display: flex;
     font-size: 20px;
@@ -29,7 +35,7 @@
     text-align: center;
     font-size: 40px;
     line-height: 300px;
-    margin: 10px 0px 10px 0px;
+    margin: 5px 0px 10px 0px;
 }
 
 main{
@@ -87,6 +93,8 @@ main{
 @media (max-width:600px){
     .box{width:90%}
     .image{width:100%}
+    .item{display:none;}
+    .icon{display: block;}
 }
 
 /*
