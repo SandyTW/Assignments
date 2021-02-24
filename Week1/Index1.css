@@ -74,3 +74,9 @@ main{
     width: 1200px;
     padding:5px;
 }
+
+@media screen and (min-width:600px) and (max-width:1200px){
+    .content{width: 90%; text-align: center;}
+    .content-a{text-align: center;}
+    .content-b{text-align: center;}
+}
