@@ -87,6 +87,6 @@ main{
     .box{width:90%}
     .image{width:100%}
     .item{display:none;}
-    .icon{display:inline;}
+    .icon{display:block}
 
 }
