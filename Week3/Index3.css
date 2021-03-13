@@ -1,0 +1,99 @@
+/* Index1.css */
+
+.title{
+    font-size:20px;
+    font-weight: bold;
+    margin:20px;
+    width: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.icon{
+    width:10%;
+    margin-right:20px;
+    display: none;
+    object-fit:cover;
+    
+}
+.ul-list{
+    display: flex;
+    font-size: 20px;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.item{
+    display: block;
+    width: 70px;
+    font-size: 20px;
+    font-family: Arial;
+    text-align: center;
+}
+
+.message{
+    background-color:rgb(222, 238, 252);
+    text-align: center;
+    font-size: 40px;
+    line-height: 300px;
+    margin: 5px 0px 10px 0px;
+}
+
+main{
+    flex-wrap: wrap;
+}
+
+.content-a{
+    margin-left: auto;
+    margin-right: auto;
+    padding:5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*width: 1200px;*/
+
+}
+
+.box{
+    width:290px;
+    display: inline-block;
+    padding:6.5px;
+    
+}
+
+
+.image{
+    object-fit: cover;
+    width:290px;
+    vertical-align: bottom;
+    height:200px;
+
+}
+
+.pic-name{
+    background-color:rgb(222, 238, 252);
+    font-size: 20px;
+    padding:2.5% 5%;
+    height:50px;
+    text-align: center;
+    /* line-height: 50px; */
+    font-family: arial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+
+@media (max-width:1200px){
+    .box{width:45%}
+    .image{width:100%}
+}
+
+@media (max-width:600px){
+    .box{width:90%}
+    .image{width:100%}
+    .item{display:none;}
+    .icon{display:block}
+
+}
