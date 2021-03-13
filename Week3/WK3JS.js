@@ -12,7 +12,7 @@ fetch(src)
 
 function dataProceeding(data) {
 console.log(data);
-for (i = 0; i < data.result.results.length; i++) {
+for (i = 0; i <8; i++) {
   if (i % 4 === 0) {
     let container = document.createElement('div');
     container.classList.add('content-a');
