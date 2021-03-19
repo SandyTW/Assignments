@@ -1,0 +1,20 @@
+/* WK4Style.css */
+
+
+.title
+{background-color: #003344; color:#ffffff;font-weight: bold; font-size: 30px;
+ text-align: center; padding: 25px} 
+
+.content{
+    font-size:25px; text-align:center; padding:25px; 
+}
+
+.input{
+    font-size: 17px; text-align: center;
+}
+
+@media screen and (max-width: 600px){
+.content{width: 100%;}
+}
+
+     
