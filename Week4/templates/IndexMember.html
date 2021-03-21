@@ -1,9 +1,10 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"; >
+    <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='WK4Style.css')}}"> 
+    
     <title>Successfully Login</title>
 </head> 
 <body style="margin:0px;">
@@ -12,6 +13,8 @@
     </header>
         
         <div class="content">恭喜你，成功登入系統</div>
+
+        <button onclick = "window.location = 'http://127.0.0.1:3000/signout'" type="submit" class='dropbtn'>登出系統</button>
 
    
 </body>
