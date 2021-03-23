@@ -19,3 +19,18 @@ Week 5 Assignment 要求三:基本的 SQL 指令
   ● 使用 SELECT 指令取得 user 資料表中第 2 ~ 4 共三筆資料，並按照 time 欄位，由近到遠排序。
   
   ![image](https://user-images.githubusercontent.com/77286388/112094477-4c0b4000-8bd6-11eb-84fd-6f35f244e00c.png)
+  
+  ● 使用 SELECT 指令取得欄位 username 是 ply 的使用者資料。
+  
+  ![image](https://user-images.githubusercontent.com/77286388/112094603-955b8f80-8bd6-11eb-9f83-be1f600cc71e.png)
+  
+  ● 使用 SELECT 指令取得欄位 username 是 ply、且欄位 password 也是 ply 的資料。
+  
+  ![image](https://user-images.githubusercontent.com/77286388/112094982-bcb25c80-8bd6-11eb-8630-e3948f5a291b.png)
+
+  ● 使用 UPDATE 指令更新欄位 username 是 ply 的使用者資料，將資料中的 name 欄位改成【丁滿】。
+
+  ![image](https://user-images.githubusercontent.com/77286388/112095544-a789fd80-8bd7-11eb-89cd-caaff0b915de.png)
+  
+  
+
