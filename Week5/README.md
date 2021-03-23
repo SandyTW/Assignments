@@ -39,5 +39,11 @@ Week 5 Assignment 要求三:基本的 SQL 指令
 
   ![image](https://user-images.githubusercontent.com/77286388/112095544-a789fd80-8bd7-11eb-89cd-caaff0b915de.png)
   
+* 使用 DELETE 指令刪除所有在 user 資料表中的資料。<br>
+   DELETE FROM user;
+   
+   ![image](https://user-images.githubusercontent.com/77286388/112115365-107f6e80-8bf4-11eb-8714-5ee55ebfe66f.png)
+
+  
   
 
