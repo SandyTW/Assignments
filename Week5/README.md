@@ -14,3 +14,8 @@ Week 5 Assignment 要求三:基本的 SQL 指令
   ● 使用 SELECT 指令取得所有在 user 資料表中的使用者資料，並按照 time 欄位，由近到遠排序。
   
   ![image](https://user-images.githubusercontent.com/77286388/112093866-26ca0200-8bd5-11eb-94cf-c705f464e005.png)
+
+
+  ● 使用 SELECT 指令取得 user 資料表中第 2 ~ 4 共三筆資料，並按照 time 欄位，由近到遠排序。
+  
+  ![image](https://user-images.githubusercontent.com/77286388/112094477-4c0b4000-8bd6-11eb-84fd-6f35f244e00c.png)
