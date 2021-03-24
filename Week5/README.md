@@ -20,11 +20,15 @@ Week 5 Assignment
   * SELECT * FROM user ORDER BY time;
   
   ![image](https://user-images.githubusercontent.com/77286388/112093866-26ca0200-8bd5-11eb-94cf-c705f464e005.png)
+  ![image](https://user-images.githubusercontent.com/77286388/112278422-c6fb5600-8cbd-11eb-861c-ef6c7aaa064a.png)
+
 
 * 使用 SELECT 指令取得 user 資料表中第 2 ~ 4 共三筆資料，並按照 time 欄位，由近到遠排序。<br>
-  * SELECT * FROM user WHERE id BETWEEN 2 AND 4;
+  * SELECT * FROM user WHERE id BETWEEN 2 AND 4 ORDER BY time DESC;
   
   ![image](https://user-images.githubusercontent.com/77286388/112094477-4c0b4000-8bd6-11eb-84fd-6f35f244e00c.png)
+  ![image](https://user-images.githubusercontent.com/77286388/112278352-afbc6880-8cbd-11eb-82e0-ba5a8af81faf.png)
+
   
 * 使用 SELECT 指令取得欄位 username 是 ply 的使用者資料。<br>
   * SELECT * FROM user WHERE username = 'ply';
