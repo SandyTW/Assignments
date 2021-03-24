@@ -1,5 +1,7 @@
-Week 5 Assignment 要求三:基本的 SQL 指令
------
+Week 5 Assignment 
+======
+要求三:基本的 SQL 指令
+------
 
 * 使用 INSERT 指令新增一筆資料到 user 資料表中，這筆資料的 username 和 password 欄位必須是 ply。接著繼續新增至少 4 筆隨意的資料。<br>
   INSERT INTO user VALUES(1, 'ply', 'ply', 'ply', default);
@@ -43,6 +45,28 @@ Week 5 Assignment 要求三:基本的 SQL 指令
    DELETE FROM user;
    
    ![image](https://user-images.githubusercontent.com/77286388/112115365-107f6e80-8bf4-11eb-8714-5ee55ebfe66f.png)
+   
+   
+要求四:結合資料表 SQL JOIN 的操作 
+------
+* 使用 SELECT 搭配 JOIN 的語法，取得所有留言，資料中須包含留言會員的姓名。<br>
+  SELECT message.id, message.user_id, user.name, message.content, message.time
+	FROM message 
+	INNER JOIN user on message.user_id = user.id;
+  
+  ![image](https://user-images.githubusercontent.com/77286388/112252344-ea130f00-8c97-11eb-8b38-259f0e930240.png)
+
+  
+* 使用 SELECT 搭配 JOIN 的語法，取得 user 資料表中欄位 username 是 ply 的所有留言，資料中須包含留言會員的姓名。<br>
+  SELECT message.id, message.user_id, user.name, message.content, message.time 
+  FROM message INNER JOIN user on message.user_id = user.id
+  WHERE user.username = 'ply';
+  
+  ![image](https://user-images.githubusercontent.com/77286388/112252376-f72ffe00-8c97-11eb-9320-7959c04e4856.png)
+
+
+
+
 
   
   
