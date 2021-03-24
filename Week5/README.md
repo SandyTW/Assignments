@@ -9,7 +9,8 @@ Week 5 Assignment
 * 使用 SELECT 指令取得所有在 user 資料表中的使用者資料。  
   * SELECT * FROM user;
 
-  ![image](https://user-images.githubusercontent.com/77286388/112092774-27619900-8bd3-11eb-9f28-0f0529a2a5df.png)
+  ![image width = '300%'](https://user-images.githubusercontent.com/77286388/112092774-27619900-8bd3-11eb-9f28-0f0529a2a5df.png)
+  
 
 * 使用 SELECT 指令取得 user 資料表中總共有幾筆資料。<br>
   * SELECT COUNT(username) FROM user;
