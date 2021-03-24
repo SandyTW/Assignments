@@ -52,15 +52,15 @@ Week 5 Assignment
 * 使用 SELECT 搭配 JOIN 的語法，取得所有留言，資料中須包含留言會員的姓名。<br>
   * SELECT message.id, message.user_id, user.name, message.content, message.time
 	FROM message 
-		INNER JOIN user on message.user_id = user.id;
+	INNER JOIN user on message.user_id = user.id;
   
   ![image](https://user-images.githubusercontent.com/77286388/112252344-ea130f00-8c97-11eb-8b38-259f0e930240.png)
 
   
 * 使用 SELECT 搭配 JOIN 的語法，取得 user 資料表中欄位 username 是 ply 的所有留言，資料中須包含留言會員的姓名。<br>
-  SELECT message.id, message.user_id, user.name, message.content, message.time 
-  FROM message INNER JOIN user on message.user_id = user.id
-  WHERE user.username = 'ply';
+  * SELECT message.id, message.user_id, user.name, message.content, message.time 
+  	FROM message INNER JOIN user on message.user_id = user.id
+  	WHERE user.username = 'ply';
   
   ![image](https://user-images.githubusercontent.com/77286388/112252376-f72ffe00-8c97-11eb-9320-7959c04e4856.png)
 
