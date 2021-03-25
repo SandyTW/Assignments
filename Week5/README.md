@@ -13,9 +13,10 @@ Week 5 Assignment
   
 
 * 使用 SELECT 指令取得 user 資料表中總共有幾筆資料。<br>
-  * SELECT COUNT(username) FROM user;
+  * SELECT COUNT(id) FROM user;
   
-  ![image](https://user-images.githubusercontent.com/77286388/112093355-3ac13400-8bd4-11eb-8486-d48a0be1939b.png)
+  ![image](https://user-images.githubusercontent.com/77286388/112415326-9e776880-8d5e-11eb-87d5-0a028aa4e69d.png)
+
 
 * 使用 SELECT 指令取得所有在 user 資料表中的使用者資料，並按照 time 欄位，由近到遠排序。<br>
   * SELECT * FROM user ORDER BY time DESC;
