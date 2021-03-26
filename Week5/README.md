@@ -29,7 +29,7 @@ Week 5 Assignment
   ```
   SELECT * FROM user ORDER BY time DESC LIMIT 1,3;
   ```
- ![image](https://user-images.githubusercontent.com/77286388/112564282-f45b1780-8e15-11eb-9f19-d7150874a550.png)
+  ![image](https://user-images.githubusercontent.com/77286388/112564282-f45b1780-8e15-11eb-9f19-d7150874a550.png)
 
 
 * 使用 SELECT 指令取得欄位 username 是 ply 的使用者資料。
