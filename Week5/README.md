@@ -25,7 +25,7 @@ Week 5 Assignment
   ```
   ![image](https://user-images.githubusercontent.com/77286388/112278422-c6fb5600-8cbd-11eb-861c-ef6c7aaa064a.png)
 
-* 使用 SELECT 指令取得 user 資料表中第 2 ~ 4 共三筆資料，並按照 time 欄位，由近到遠排序。(Note. 按照時間排序之後的第 2 ~ 4 筆資料，所以不一定和 id 的數字排序一樣，)
+* 使用 SELECT 指令取得 user 資料表中第 2 ~ 4 共三筆資料，並按照 time 欄位，由近到遠排序。(Note. 按照時間排序之後的第 2 ~ 4 筆資料，不一定和 id 的數字排序一樣，)
   ```
   SELECT * FROM user ORDER BY time DESC LIMIT 1,3;
   ```
