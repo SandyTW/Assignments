@@ -27,9 +27,10 @@ Week 5 Assignment
 
 * 使用 SELECT 指令取得 user 資料表中第 2 ~ 4 共三筆資料，並按照 time 欄位，由近到遠排序。
   ```
-  SELECT * FROM user WHERE id BETWEEN 2 AND 4 ORDER BY time DESC;
+  SELECT * FROM user ORDER BY time DESC LIMIT 1,3;
   ```
-  ![image](https://user-images.githubusercontent.com/77286388/112278352-afbc6880-8cbd-11eb-82e0-ba5a8af81faf.png)
+ ![image](https://user-images.githubusercontent.com/77286388/112564282-f45b1780-8e15-11eb-9f19-d7150874a550.png)
+
 
 * 使用 SELECT 指令取得欄位 username 是 ply 的使用者資料。
   ```
