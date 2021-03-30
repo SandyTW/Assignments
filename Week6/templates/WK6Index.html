@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='WK6Style.css')}}"> 
+
+    <title>Week6 Assignment - Login Page</title>
+</head> 
+<body style="margin:0px;">
+    <header>
+        <div class='title'>歡迎光臨，請註冊登入系統</div>
+    </header>
+        
+        <div class="content">註冊帳號</div>
+        <form action="/signup" method="POST" class="input">
+            姓名  <input type="text" name="nameColumn" required>
+            <div style="margin:5px"></div>
+            帳號  <input type="text" name="nameColumn" required>
+            <div style="margin:5px"></div>
+            密碼  <input type="text" name="passwordColumn" required>
+            <div style="margin:5px"></div>
+            <button style="margin:7px">註冊</button>
+        </form>
+
+        <div class="content">登入系統</div>
+        <form action="/signin" method="POST" class="input">
+            帳號  <input type="text" name="nameColumn">
+            <div style="margin:5px"></div>
+            密碼  <input type="text" name="passwordColumn">
+            <div style="margin:5px"></div>
+            <button style="margin:7px">登入</button>
+        </form>
+
+     
+
+   
+</body>
+</html>
+    
+

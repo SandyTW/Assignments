@@ -1,0 +1,30 @@
+/* WK4Style.css */
+
+body{
+    margin:0px; 
+    font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+}
+
+.title
+{background-color: #003344; color:#ffffff;font-weight: bold; font-size: 30px;
+ text-align: center; padding: 25px} 
+
+.content{
+    font-size:25px; text-align:center; padding:25px; 
+}
+
+.input{
+    font-size: 17px; text-align: center;
+}
+
+.dropbtn{
+    display:block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/* @media screen and (max-width: 600px){
+.content{width: 100%;}
+}
+
+      */
