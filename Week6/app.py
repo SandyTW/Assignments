@@ -5,6 +5,16 @@ from flask import redirect
 from flask import session
 from flask import g
 
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="Tj920419#!",
+  database="website"
+)
+mycursor = mydb.cursor()
+cnx=mydb.cursor(dictionary=True)
 
 app=Flask(__name__)
 app.secret_key = '\x00\xa1\x85\nv\xd9;D'
@@ -13,15 +23,34 @@ app.secret_key = '\x00\xa1\x85\nv\xd9;D'
 def home():
     return render_template("WK6Index.html")
 
+
+# @app.route("/signup", methods=["POST"])
+# def Register():
+
+
+
+
+
+
+
 @app.route("/signin", methods=["POST"])
 def verified():
-    name=request.form["nameColumn"]
+    username=request.form["nameColumn"]
     password=request.form["passwordColumn"]
-    if name =='test' and password =='test':
-        session['user'] = name
-        return redirect("/member/")
+
+    cnx.execute('SELECT * FROM user WHERE username = %s AND password = %s', (username, password))
+    account = cnx.fetchone()
+    if account: 
+        session['user']=account['username']
+        return redirect('/member/')
     else:
         return redirect("/error/")
+
+    # if name =='test' and password =='test':
+    #     session['user'] = name
+    #     return redirect("/member/")
+    # else:
+    #     return redirect("/error/")
 
 @app.route("/member/")
 def verifiedMember():
