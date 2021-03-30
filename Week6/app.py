@@ -4,6 +4,8 @@ from flask import render_template
 from flask import redirect
 from flask import session
 from flask import g
+from flask import url_for
+
 
 import mysql.connector
 
@@ -24,14 +26,19 @@ def home():
     return render_template("WK6Index.html")
 
 
-# @app.route("/signup", methods=["POST"])
-# def Register():
-
-
-
-
-
-
+@app.route("/signup", methods=["POST"])
+def Register():
+    username=request.form["usernameRegister"]
+    name=request.form["nameRegister"]
+    password=request.form["passwordRegister"]
+    cnx.execute('SELECT * FROM user WHERE username = %s', (username,))
+    account = cnx.fetchone()
+    if account:
+        return redirect("/error/?message=帳號已經被註冊")
+    else:
+        cnx.execute('INSERT INTO user VALUES (default, %s, %s, %s, default)', (name, username, password))
+        mydb.commit()
+        return redirect('/member/')
 
 @app.route("/signin", methods=["POST"])
 def verified():
@@ -41,38 +48,27 @@ def verified():
     cnx.execute('SELECT * FROM user WHERE username = %s AND password = %s', (username, password))
     account = cnx.fetchone()
     if account: 
-        session['user']=account['username']
+        session['username']=account['username']
         return redirect('/member/')
     else:
-        return redirect("/error/")
-
-    # if name =='test' and password =='test':
-    #     session['user'] = name
-    #     return redirect("/member/")
-    # else:
-    #     return redirect("/error/")
+        return redirect('/error/?message=帳號或密碼輸入錯誤')
+        
 
 @app.route("/member/")
 def verifiedMember():
-    if g.user:
+    if 'username' in session:
         return render_template("IndexMember.html", user=session['user'])
     return redirect("/")
 
 @app.route("/error/")
 def verifiedError():
-    msg='帳號或密碼輸入錯誤'
-    return render_template("IndexError.html", data=str(msg))
+    data=request.args.get("message", None)
+    return render_template("IndexError.html", msg=data)
 
-
-@app.before_request
-def beforeRequest():
-    g.user = None
-    if 'user' in session:
-        g.user = session['user']
 
 @app.route('/signout')
 def dropsession():
-    session.pop('user', None)
+    session.pop('username', None)
     return redirect("/")
 
 
