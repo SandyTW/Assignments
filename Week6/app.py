@@ -31,7 +31,9 @@ def verifiedMember():
 
 @app.route("/error/")
 def verifiedError():
-    return render_template("IndexError.html")
+    msg='帳號或密碼輸入錯誤'
+    return render_template("IndexError.html", data=str(msg))
+
 
 @app.before_request
 def beforeRequest():
