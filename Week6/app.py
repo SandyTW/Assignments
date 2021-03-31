@@ -57,7 +57,7 @@ def verified():
 @app.route("/member/")
 def verifiedMember():
     if 'username' in session:
-        return render_template("IndexMember.html", user=session['user'])
+        return render_template("IndexMember.html", user=session['username'])
     return redirect("/")
 
 @app.route("/error/")
