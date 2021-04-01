@@ -31,8 +31,8 @@ def Register():
     name=request.form["nameRegister"]
     password=request.form["passwordRegister"]
     cnx.execute('SELECT * FROM user WHERE username = %s', (username,))
-    account = cnx.fetchone()
-    if account:
+    CurrentUser=cnx.fetchone()
+    if CurrentUser:
         return redirect("/error/?message=帳號已經被註冊")
     else:
         cnx.execute('INSERT INTO user VALUES (default, %s, %s, %s, default)', (name, username, password))
@@ -46,10 +46,10 @@ def verified():
     password=request.form["passwordColumn"]
 
     cnx.execute('SELECT * FROM user WHERE username = %s AND password = %s', (username, password))
-    account=cnx.fetchone()
-    if account: 
-        session['name']=account['name']
-        session['username']=account['username']
+    CurrentUser=cnx.fetchone()
+    if CurrentUser: 
+        session['name']=CurrentUser['name']
+        session['username']=CurrentUser['username']
         return redirect('/member/')
     else:
         return redirect('/error/?message=帳號或密碼輸入錯誤')
@@ -57,7 +57,7 @@ def verified():
 
 @app.route("/member/")
 def verifiedMember():
-    if 'name' in session:
+    if 'username' in session:
         return render_template("IndexMember.html")
     else:
         return redirect("/")
