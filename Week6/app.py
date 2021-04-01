@@ -3,9 +3,7 @@ from flask import request
 from flask import render_template
 from flask import redirect
 from flask import session
-from flask import g
 from flask import url_for
-
 
 import mysql.connector
 
@@ -20,6 +18,7 @@ cnx=mydb.cursor(dictionary=True)
 
 app=Flask(__name__)
 app.secret_key = '\x00\xa1\x85\nv\xd9;D'
+
 
 @app.route("/")
 def home():
@@ -38,7 +37,8 @@ def Register():
     else:
         cnx.execute('INSERT INTO user VALUES (default, %s, %s, %s, default)', (name, username, password))
         mydb.commit()
-        return redirect('/member/')
+        return redirect('/')
+
 
 @app.route("/signin", methods=["POST"])
 def verified():
@@ -46,8 +46,9 @@ def verified():
     password=request.form["passwordColumn"]
 
     cnx.execute('SELECT * FROM user WHERE username = %s AND password = %s', (username, password))
-    account = cnx.fetchone()
+    account=cnx.fetchone()
     if account: 
+        session['name']=account['name']
         session['username']=account['username']
         return redirect('/member/')
     else:
@@ -56,9 +57,11 @@ def verified():
 
 @app.route("/member/")
 def verifiedMember():
-    if 'username' in session:
-        return render_template("IndexMember.html", user=session['username'])
-    return redirect("/")
+    if 'name' in session:
+        return render_template("IndexMember.html")
+    else:
+        return redirect("/")
+
 
 @app.route("/error/")
 def verifiedError():
@@ -68,6 +71,7 @@ def verifiedError():
 
 @app.route('/signout')
 def dropsession():
+    session.pop('name', None)
     session.pop('username', None)
     return redirect("/")
 
