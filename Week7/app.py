@@ -6,13 +6,14 @@ from flask import session
 from flask import url_for
 from flask import jsonify
 
+
 import json
 import mysql.connector
 
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="  ",
+  password="",
   database="website",
 )
 mycursor = mydb.cursor()
@@ -82,18 +83,21 @@ def dropsession():
 def searchUsers():
     usernameSearch=request.args.get("username", None)
     cnx.execute('SELECT * FROM user WHERE username = %s', (usernameSearch,))
-    result=cnx.fetchall()
-    content={}
-    if result:
-        for Result in result:
-            content={'id': Result['id'], 'name':Result['name'], 'username':Result['username']}
-        return jsonify({'data': content})
-    else:
-        return {'data':"null"}
+    fetchResult=cnx.fetchall()
+    if fetchResult:
+        for User in fetchResult:
+            content={'id': User['id'], 'name':User['name'], 'username':User['username']}
+            returnData={'data':content}
+            userName=returnData['data']['name']
         
-    
-    # data=json.loads(content)
-    # print (data)
+    else:
+        content='null'
+        returnData={'data':content}
+        userName=returnData['data']
+
+    return render_template("IndexMember.html", UserName=userName)
+    # return jsonify({'data':content})
+
         
 
 if __name__=="__main__":

@@ -24,31 +24,29 @@
         <input type="text" name="username" required>
         <button style="margin:7px" id='btnSearch'>查詢</button>
     </form>
-
-    <span id='data'></span>
+    <div class=content>{{UserName}}</div>
 
 </body>
 
 </html>
 
-<script>
+<!-- <script>
     function handler() {
         let req = new XMLHttpRequest();
         req.open('GET', 'http://127.0.0.1:3000/api/users');
         req.onreadystatechange = function () {
             if (req.readyState === 4) {
                 console.log(req.responseText);
-                process_data(req.responseText);
+                // process_data(req.responseText);
             }
         };
         req.send();
-        alert('Completed')
     }
-
+   
     function process_data(data){
-      let show=getElementById('data')
-      nUser.textContext=data.name
+      let field=getElementById('data')
+     
     }
     let btn = document.getElementById('btnSearch');
     btn.addEventListener('click', handler);
-</script>
+</script> -->
