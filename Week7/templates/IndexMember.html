@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='WK7style.css')}}">
+
+    <title>Successfully Login</title>
+</head>
+
+<body style="margin:0px;">
+    <header>
+        <div class='title'>歡迎光臨，這是會員頁</div>
+    </header>
+
+    <div class="content">{{session.name}}，歡迎登入系統</div>
+
+    <button onclick="window.location = 'http://127.0.0.1:3000/signout'" type="submit" class='dropbtn'>登出系統</button>
+
+    <div class="content">查詢會員姓名</div>
+
+    <form action="/api/users" method="GET" class="input">
+        <input type="text" name="username" required>
+        <button style="margin:7px" id='btnSearch'>查詢</button>
+    </form>
+
+    <span id='data'></span>
+
+</body>
+
+</html>
+
+<script>
+    function handler() {
+        let req = new XMLHttpRequest();
+        req.open('GET', 'http://127.0.0.1:3000/api/users');
+        req.onreadystatechange = function () {
+            if (req.readyState === 4) {
+                console.log(req.responseText);
+                process_data(req.responseText);
+            }
+        };
+        req.send();
+        alert('Completed')
+    }
+
+    function process_data(data){
+      let show=getElementById('data')
+      nUser.textContext=data.name
+    }
+    let btn = document.getElementById('btnSearch');
+    btn.addEventListener('click', handler);
+</script>

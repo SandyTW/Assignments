@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='WK7Style.css')}}"> 
+    
+    <title>Login Failed</title>
+</head> 
+<body style="margin:0px;">
+    <header>
+        <div class='title'>失敗頁面</div>
+    </header>
+        
+        <div class="content">{{msg}}</div>
+
+        <button onclick = "window.location = 'http://127.0.0.1:3000'" type="submit" class='dropbtn'>返回首頁</button>
+        
+
+   
+</body>
+</html>
+    
+
