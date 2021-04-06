@@ -13,7 +13,7 @@ import mysql.connector
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="",
+  password="Tj920419#!",
   database="website",
 )
 mycursor = mydb.cursor()
@@ -96,7 +96,9 @@ def searchUsers():
         userName=returnData['data']
 
     return render_template("IndexMember.html", UserName=userName)
-    # return jsonify({'data':content})
+    data = jsonify(returnData)
+    print(data)
+ 
 
         
 
