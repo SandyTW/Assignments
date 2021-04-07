@@ -30,7 +30,11 @@
 
 </html>
 
-<!-- <script>
+<script>
+   
+    let btn = document.getElementById('btnSearch');
+    btn.addEventListener('click', handler);
+
     function handler() {
         let req = new XMLHttpRequest();
         req.open('GET', 'http://127.0.0.1:3000/api/users');
@@ -45,8 +49,5 @@
    
     function process_data(data){
       let field=getElementById('data')
-     
     }
-    let btn = document.getElementById('btnSearch');
-    btn.addEventListener('click', handler);
-</script> -->
+</script>

@@ -88,19 +88,10 @@ def searchUsers():
         for User in fetchResult:
             content={'id': User['id'], 'name':User['name'], 'username':User['username']}
             returnData={'data':content}
-            userName=returnData['data']['name']
-        
+            return jsonify(returnData)
     else:
-        content='null'
-        returnData={'data':content}
-        userName=returnData['data']
-
-    return render_template("IndexMember.html", UserName=userName)
-    data = jsonify(returnData)
-    print(data)
- 
-
-        
+        returnData={'data':'null'}
+        return jsonify(returnData)
 
 if __name__=="__main__":
     app.run(port=3000, debug=True)
