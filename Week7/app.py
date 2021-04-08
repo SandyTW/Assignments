@@ -20,6 +20,7 @@ mycursor = mydb.cursor()
 cnx=mydb.cursor(dictionary=True)
 
 app=Flask(__name__)
+app.config["JSON_AS_ASCII"] = False
 app.secret_key = '\x00\xa1\x85\nv\xd9;D'
 
 
@@ -86,12 +87,28 @@ def searchUsers():
     fetchResult=cnx.fetchall()
     if fetchResult:
         for User in fetchResult:
-            content={'id': User['id'], 'name':User['name'], 'username':User['username']}
-            returnData={'data':content}
-            return jsonify(returnData)
+            content={'data':{
+                        'id':User['id'], 
+                        'name':User['name'], 
+                        'username':User['username']
+                        }
+                    }
+            
+            return content
+            
     else:
-        returnData={'data':'null'}
-        return jsonify(returnData)
+        content={'data':'null'}
+        return content
+
+
+# @app.route("/api/test")
+# def search():
+#     Result=cnx.execute('SELECT * FROM user')
+#     rows = cnx.fetchall()
+#     respAll = jsonify(rows), 
+#     return respAll
+
+
 
 if __name__=="__main__":
     app.run(port=3000, debug=True)

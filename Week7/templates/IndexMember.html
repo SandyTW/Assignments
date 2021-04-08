@@ -20,34 +20,45 @@
 
     <div class="content">查詢會員姓名</div>
 
-    <form action="/api/users" method="GET" class="input">
-        <input type="text" name="username" required>
+    <form action="/api/users" method="GET" class="input" id="getData">
+        <input type="text" name="username" id='username' required>
         <button style="margin:7px" id='btnSearch'>查詢</button>
     </form>
-    <div class=content>{{UserName}}</div>
+    <div class=content id='Displayname'>
+
+
+    </div>
 
 </body>
 
 </html>
 
 <script>
-   
-    let btn = document.getElementById('btnSearch');
-    btn.addEventListener('click', handler);
+    document.getElementById("btnSearch").addEventListener('click', getName);
 
-    function handler() {
+    function getName(e) {
+        e.preventDefault();
         let req = new XMLHttpRequest();
-        req.open('GET', 'http://127.0.0.1:3000/api/users');
-        req.onreadystatechange = function () {
-            if (req.readyState === 4) {
-                console.log(req.responseText);
-                // process_data(req.responseText);
-            }
+        let username = document.getElementById("username").value;
+        req.open('GET', '/api/users?username=' + username, true);
+        req.onload = function () {
+            if (this.status == 200) {
+                console.log(`req this.responseText: ${this.responseText}`)
+                let user = JSON.parse(this.responseText)
+                let output = '';
+                console.log(`user.data/req JSON.parse(this.responseText): ${user.data}`)
+                display = user['data']['name'];
+                
+            };
+            showData(display);
         };
         req.send();
+    };
+    function showData(display){
+        console.log(display);
+        let box = document.createElement('div');
+        let b = document.getElementById('Displayname').appendChild(box);
+        box.textContent=display;
     }
-   
-    function process_data(data){
-      let field=getElementById('data')
-    }
+
 </script>
