@@ -55,10 +55,13 @@
         req.send();
     };
     function showData(display){
-        console.log(display);
         let box = document.createElement('div');
-        let b = document.getElementById('Displayname').appendChild(box);
+        let column = document.getElementById('Displayname');
+        box.textContent='';
+        column.textContent='';
+        document.getElementById('Displayname').appendChild(box);
         box.textContent=display;
+        console.log(box.value);
     }
 
 </script>
