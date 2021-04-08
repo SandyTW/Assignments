@@ -13,7 +13,7 @@ import mysql.connector
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="Tj920419#!",
+  password="",
   database="website",
 )
 mycursor = mydb.cursor()
@@ -97,17 +97,8 @@ def searchUsers():
             return content
             
     else:
-        content={'data':'null'}
+        content='{"data": null}'
         return content
-
-
-# @app.route("/api/test")
-# def search():
-#     Result=cnx.execute('SELECT * FROM user')
-#     rows = cnx.fetchall()
-#     respAll = jsonify(rows), 
-#     return respAll
-
 
 
 if __name__=="__main__":

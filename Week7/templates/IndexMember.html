@@ -45,9 +45,8 @@
             if (this.status == 200) {
                 console.log(`req this.responseText: ${this.responseText}`)
                 let user = JSON.parse(this.responseText)
-                let output = '';
-                console.log(`user.data/req JSON.parse(this.responseText): ${user.data}`)
                 display = user['data']['name'];
+                console.log(display);
                 
             };
             showData(display);
@@ -61,7 +60,6 @@
         column.textContent='';
         document.getElementById('Displayname').appendChild(box);
         box.textContent=display;
-        console.log(box.value);
     }
 
 </script>
