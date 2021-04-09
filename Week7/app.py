@@ -13,7 +13,7 @@ import mysql.connector
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="",
+  password="Tj920419#!",
   database="website",
 )
 mycursor = mydb.cursor()
@@ -80,6 +80,7 @@ def dropsession():
     return redirect("/")
 
 
+# 查詢會員資料 API
 @app.route("/api/users")
 def searchUsers():
     usernameSearch=request.args.get("username", None)
@@ -94,8 +95,7 @@ def searchUsers():
                         }
                     }
             
-            return content
-            
+            return content            
     else:
         content='{"data": null}'
         return content

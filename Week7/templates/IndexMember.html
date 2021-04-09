@@ -15,19 +15,15 @@
     </header>
 
     <div class="content">{{session.name}}，歡迎登入系統</div>
-
     <button onclick="window.location = 'http://127.0.0.1:3000/signout'" type="submit" class='dropbtn'>登出系統</button>
 
+    <!-- 查詢會員姓名 -->
     <div class="content">查詢會員姓名</div>
-
     <form action="/api/users" method="GET" class="input" id="getData">
         <input type="text" name="username" id='username' required>
         <button style="margin:7px" id='btnSearch'>查詢</button>
     </form>
-    <div class=content id='Displayname'>
-
-
-    </div>
+    <div class=content id='Displayname'></div>
 
 </body>
 
@@ -44,12 +40,17 @@
         req.onload = function () {
             if (this.status == 200) {
                 console.log(`req this.responseText: ${this.responseText}`)
-                let user = JSON.parse(this.responseText)
-                display = user['data']['name'];
+                let user = JSON.parse(this.responseText);
+                let display;
+                try {
+                    display = user['data']['name'];
+                }catch(error){
+                    display='No Record';
+                }
                 console.log(display);
-                
+                showData(display);
             };
-            showData(display);
+           
         };
         req.send();
     };
