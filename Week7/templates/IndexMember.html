@@ -19,11 +19,11 @@
 
     <!-- 查詢會員姓名 -->
     <div class="content">查詢會員姓名</div>
-    <form action="/api/users" method="GET" class="input" id="getData">
-        <input type="text" name="username" id='username' required>
+    <form action="/api/users" method="GET" class="inputSearch">
+        <input type="text" name="username" id='username' placeholder='請輸入會員帳號' required> 
         <button style="margin:7px" id='btnSearch'>查詢</button>
     </form>
-    <div class=content id='Displayname'></div>
+    <div class='content' id='Displayname'></div>
 
 </body>
 
@@ -39,7 +39,7 @@
         req.open('GET', '/api/users?username=' + username, true);
         req.onload = function () {
             if (this.status == 200) {
-                console.log(`req this.responseText: ${this.responseText}`)
+                console.log(this.responseText)
                 let user = JSON.parse(this.responseText);
                 let display;
                 try {

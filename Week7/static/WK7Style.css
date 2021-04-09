@@ -13,9 +13,17 @@ body{
     font-size:25px; text-align:center; padding:25px; 
 }
 
+#Displayname{
+    font-size:20px; text-align:center; padding:25px; 
+}
+
 
 .input{
     font-size: 17px; text-align: center;
+}
+
+.inputSearch{
+    font-size: 17px; text-align: center; margin-left:50px;
 }
 
 
