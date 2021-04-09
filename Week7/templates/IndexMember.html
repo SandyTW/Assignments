@@ -20,7 +20,7 @@
     <!-- 查詢會員姓名 -->
     <div class="content">查詢會員姓名</div>
     <form action="/api/users" method="GET" class="inputSearch">
-        <input type="text" name="username" id='username' placeholder='請輸入會員帳號' required> 
+        <input type="text" name="username" id='username' placeholder='請輸入會員帳號'> 
         <button style="margin:7px" id='btnSearch'>查詢</button>
     </form>
     <div class='content' id='Displayname'></div>
@@ -32,8 +32,8 @@
 <script>
     document.getElementById("btnSearch").addEventListener('click', getName);
 
-    function getName(e) {
-        e.preventDefault();
+    function getName(event) {
+        event.preventDefault();
         let req = new XMLHttpRequest();
         let username = document.getElementById("username").value;
         req.open('GET', '/api/users?username=' + username, true);
@@ -45,7 +45,7 @@
                 try {
                     display = user['data']['name'];
                 }catch(error){
-                    display='No Record';
+                    display='User Not Found';
                 }
                 console.log(display);
                 showData(display);
@@ -54,6 +54,7 @@
         };
         req.send();
     };
+    
     function showData(display){
         let box = document.createElement('div');
         let column = document.getElementById('Displayname');
