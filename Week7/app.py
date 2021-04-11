@@ -97,7 +97,7 @@ def searchUsers():
             
             return content            
     else:
-        return {"date": None}
+        return {"data": None}
 
 
 
