@@ -10,13 +10,16 @@ body{
  text-align: center; padding: 25px} 
 
 .content{
-    font-size:25px; text-align:center; padding:25px; 
+    font-size:23px; text-align:center; padding:25px; 
 }
 
 #Displayname{
     font-size:20px; text-align:center; padding:25px; 
 }
 
+#DisplayStatus{
+    font-size:20px; text-align:center; padding:25px; 
+}
 
 .input{
     font-size: 17px; text-align: center;

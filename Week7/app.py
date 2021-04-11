@@ -99,6 +99,24 @@ def searchUsers():
     else:
         return {"data": None}
 
+# 修改會員姓名
+@app.route("/api/user", methods=['POST'])
+def amendUser():
+    if request.method=='POST':
+        nameAMD=request.get_json()
+        usernameAMD=nameAMD['name']
+        usernameOrigin=session['name']
+        print(nameAMD)
+        print(usernameAMD)
+        print(usernameOrigin)
+        
+        cnx.execute("UPDATE user SET name = %s WHERE name = %s", (usernameAMD, usernameOrigin))
+        mydb.commit()
+        session['name']=usernameAMD
+        return {"ok": True}
+    else:
+        return {"error":True}
+    
 
 
 if __name__=="__main__":
