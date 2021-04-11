@@ -20,11 +20,18 @@
     <!-- 查詢會員姓名 -->
     <div class="content">查詢會員姓名</div>
     <form action="/api/users" method="GET" class="inputSearch">
-        <input type="text" name="username" id='username' placeholder='請輸入會員帳號'> 
+        <input type="text" name="username" id='username' placeholder='請輸入會員帳號'>
         <button style="margin:7px" id='btnSearch'>查詢</button>
     </form>
     <div class='content' id='Displayname'></div>
 
+    <!-- 更新會員姓名 -->
+    <div class="content">更新會員姓名</div>
+    <form action="/api/user" method="POST" class="inputSearch">
+        <input type="text" name="usernameAMD" id='usernameAMD' placeholder='請輸入會員姓名'>
+        <button style="margin:7px" id='btnAMD'>更新</button>
+    </form>
+    <div class='content' id='DisplayStatus'></div>
 </body>
 
 </html>
@@ -41,27 +48,30 @@
             if (this.status == 200) {
                 console.log(this.responseText)
                 let user = JSON.parse(this.responseText);
+                console.log(user);
                 let display;
                 try {
                     display = user['data']['name'];
-                }catch(error){
-                    display='User Not Found';
+                } catch (error) {
+                    display = 'User Not Found';
                 }
                 console.log(display);
                 showData(display);
             };
-           
+
         };
         req.send();
     };
-    
-    function showData(display){
+
+    function showData(display) {
         let box = document.createElement('div');
         let column = document.getElementById('Displayname');
-        box.textContent='';
-        column.textContent='';
+        box.textContent = '';
+        column.textContent = '';
         document.getElementById('Displayname').appendChild(box);
-        box.textContent=display;
+        box.textContent = display;
     }
+
+
 
 </script>
