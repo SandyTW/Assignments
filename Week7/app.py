@@ -13,7 +13,7 @@ import mysql.connector
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="Tj920419#!",
+  password="",
   database="website",
 )
 mycursor = mydb.cursor()
@@ -99,23 +99,7 @@ def searchUsers():
     else:
         return {"date": None}
 
-# 修改會員姓名
-@app.route("/api/user", methods=['POST'])
-def amendUser():
-    if request.method=='POST':
-        # usernameAMD=request.form['usernameAMD']
-        usernameAMD=request.get_json()
-        usernameOrigin=session['name']
-        print(usernameAMD)
-        print(usernameOrigin)
-        
-        cnx.execute("UPDATE user SET name = %s WHERE name = %s", (usernameAMD, usernameOrigin))
-        mydb.commit()
-        session['name']=usernameAMD
-        return '{"ok":true}'
-    else:
-        return '{"error":true}'
-    
+
 
 
 if __name__=="__main__":
