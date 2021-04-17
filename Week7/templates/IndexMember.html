@@ -32,7 +32,7 @@
         <button style="margin:7px" id='btnAMD'>更新</button>
     </form>
     <div class='content' id='DisplayStatus'></div>
-    
+
 </body>
 
 </html>
@@ -51,16 +51,15 @@
                 let user = JSON.parse(this.responseText);
                 console.log(user);
                 let display;
-                if (user['data'] == null){
+                if (user['data'] == null) {
                     display = 'User Not Found'
-                }else{
+                } else {
                     display = user['data']['name'];
                 };
-                console.log(display);    
+                console.log(display);
                 showData(display);
-                };
             };
-
+        };
         req.send();
     };
 
@@ -73,16 +72,15 @@
         box.textContent = display;
     }
 
-    // ---------------
+    // 更新會員姓名
 
     document.getElementById("btnAMD").addEventListener('click', getUpdate);
 
     function getUpdate(event) {
         event.preventDefault();
         let req = new XMLHttpRequest();
-        let username = {"name": document.getElementById("usernameAMD").value};
+        let username = { "name": document.getElementById("usernameAMD").value };
         console.log(username);
-
         req.open('POST', '/api/user');
         req.setRequestHeader('content-type', 'application/json');
         req.onreadystatechange = function () {
@@ -91,25 +89,26 @@
                 let status = JSON.parse(this.responseText);
                 console.log(status);
                 let statusShow;
-            }; if (status['ok']=true){
-                statusShow='更新成功'
-                }else{
-                    statusShow='更新失敗'
-                };
+            }; if (status['ok'] = true) {
+                statusShow = '更新成功'
+            } else {
+                statusShow = '更新失敗'
+            };
             console.log(statusShow);
             ViewStatus(statusShow);
+            document.getElementById("usernameAMD").value="";
         };
         req.send(JSON.stringify(username));
     };
 
-    function ViewStatus(statusShow){
+    function ViewStatus(statusShow) {
         let box = document.createElement('div');
         let column = document.getElementById('DisplayStatus');
         box.textContent = '';
         column.textContent = '';
         document.getElementById('DisplayStatus').appendChild(box);
-        box.textContent = statusShow;
-        console.log(session);
+        box.textContent = statusShow;   
+
     }
 
 
